@@ -1,0 +1,262 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*General styles*/
+html {
+	font-size: 62.5%; 
+}
+
+body{
+	background-image: url(Images/rae-tian-511905-unsplash.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/*Heading styles*/
+.heading{
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+	color:#CCCCCC;
+	font-size: 2.8rem;
+
+}
+h1{
+    font-family: 'Mali', cursive;
+	text-shadow: 2px 2px #3F041A;
+}
+/*Flashcards section styles*/
+.flashcards{
+	width:1000px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.card {
+    width:200px;
+    height:300px;
+    margin:25px;
+    border-radius: 20px;
+    position: relative;
+    perspective: 800px; 
+    transition:all 0.5s;
+}
+
+.front, .back {
+   position: absolute;
+   height:100%;
+   width:100%;
+   transition:all 0.5s;
+   border: 1px solid #CCCCCC;
+   border-radius: 20px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   backface-visibility:hidden; 
+}
+/*Front styles*/
+.front {
+   background:#CCCCCC; 
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+
+
+}
+h2{
+	font-family: 'Mali', cursive;
+	font-size: 2.5rem;
+	text-align: center;
+	margin-bottom: 30px;
+	color:#3F041A;
+}
+.photo {
+	width:150px;
+	height: 200px;
+	border: 1px solid #263650;
+	border-radius: 20px;
+	margin-left: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+/*Back styles*/
+.back {
+   background:#CCCCCC; 
+   color:#333333;
+   transform:rotateY(180deg);
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   flex-direction: column;
+       
+}
+
+.card:hover .back {
+   transform:rotateY(0);
+   transform: scale(1.3);
+   z-index: 10;
+ }
+
+.card:hover .front {
+   transform:rotateY(-180deg);
+}
+
+.question{
+	font-size: 1.6rem;
+	text-align: center;
+	padding:5px;
+}
+
+.answerStyle{
+   font-size: 1.2rem;
+   width:100%;
+   border-radius: 30px;
+   display: flex;
+   justify-content: space-between;
+
+}
+
+
+/*Styles for forms questions*/
+label {
+    padding: 12px 90px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #3C454C;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: background 1s ease;
+    overflow: hidden;
+}
+
+.quiz2 label,
+.quiz6 label,
+.quiz7 label,
+.quiz8 label{
+	padding: 12px 15px;
+}
+.quiz3 label,
+.quiz4 label,
+.quiz5 label{
+	padding: 12px 65px;
+}
+
+
+
+input:checked ~ label {
+    background-color: #B0967E;
+       
+}
+
+input {
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+button {
+	width:100px;
+	height: 30px;
+	background-color: #3F041A;
+	color:white;
+	margin-left: 50px;
+	text-align: center;
+  	text-decoration: none;
+  	outline: none;
+
+}
+
+button:hover{
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+button:active{
+	border: 3px solid white;
+}
+
+.answerText{
+	width:190px;
+	font-size: 1.2rem;
+	text-align: center;
+}
+/*Results section*/
+
+.resultSection{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	position: relative;
+	width:100%;
+	margin-bottom: 20px;
+}
+button.results,
+.numberOf{
+	height:50px;
+	width: 200px;
+	font-size: 2rem;
+	border-radius: 50px;
+	/*position: absolute;
+	left:10px;*/
+
+}
+
+.numberOf{
+	position: absolute;
+	width:300px;
+	left: 300px;
+	background-color: #3F041A;
+	color: white;
+	font-size: 1.8rem;
+	padding-left: 10px;
+	border: 3px solid white;
+
+}
+
+p.countText{
+	margin-bottom: 15px;
+	margin-top:10px;
+}
+p.result {
+	position: absolute;
+	top:0;
+	right: 10px;
+	width:370px;
+	font-size: 2rem;
+	background-color: #CCCCCC;
+	border-radius: 50px;
+	color: #3F041A;
+	text-align: center;
+	padding: 10px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.hidden{
+  	visibility: hidden;
+}
+.show{
+  	visibility: visible;
+}
+
+
+   
